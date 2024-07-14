@@ -1,0 +1,647 @@
+@font-face {
+   font-family: 'Montserrat';
+   src: url(./fonts/Montserrat-Bold.woff2) format('woff2');
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+    font-family: 'Libre Barcode 128 Text';
+    src: url(./fonts/LibreBarcode128Text-Regular.woff2) format('woff2');
+    font-style: normal;
+    font-display: swap;
+ }
+ @font-face {
+    font-family: 'Kenia';
+    src: url(./fonts/Kenia-Regular.woff2) format('woff2');
+    font-style: normal;
+    font-display: swap;
+ }
+ @font-face {
+    font-family: 'Istok Web';
+    src: url(./fonts/IstokWeb-Bold.woff2) format('woff2');
+    font-style: normal;
+    font-display: swap;
+ }
+ @font-face {
+    font-family: 'Karla';
+    src: url(./fonts/Karla-Regular.woff2) format('woff2');
+    font-style: normal;
+    font-display: swap;
+ }
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+ }
+ html {
+    scroll-behavior: smooth; /* Плавный скролл */
+}
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, 
+ footer, header, hgroup, menu, nav, section {
+     display: block;
+ }
+ body {
+     line-height: 1;
+ }
+ ol, ul {
+     list-style: none;
+ }
+ blockquote, q {
+     quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+     content: '';
+     content: none;
+ }
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
+ }
+
+:root {
+    --color-red:#D53005;
+    --color-dark:#000000;
+
+    --border-radius:30px;
+    --border: 1px;
+
+    --input-height:60px;
+
+    --container-padding-x:15px;
+
+    --transition-duration:0.2s;
+}
+
+html, body {
+    height: 100%;
+  }
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    background-image: url(./images/musikplayer.jpeg);
+    padding-left: 4%;
+    padding-top: 2%;
+    padding-right: 40%;
+    color:white;
+}
+
+.header a{
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
+    transition-duration:0.2s
+}
+.header a:hover{
+    color:grey;
+}
+.header-textup{
+    font-family: 'Libre Barcode 128 Text';
+    font-size: 80px;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: center; /* Центрируем список ul */
+    padding-right: 50%;
+}
+.header-menu-list{
+    display: flex;
+    column-gap: 50%;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: -100;
+    font-family: 'Istok Web';
+}
+@media (max-width:1024px){
+    .header{
+        flex-wrap: wrap;
+        padding-top: 20px;
+        row-gap: 10px;
+    }
+    .header-menu{
+        order:1;
+        flex-basis:100%;
+    }
+    .header-menu a{
+        height: 50px;
+    }
+
+}
+@media (max-width:650px){
+
+    .header-menu-list{
+        column-gap: 10%;}
+    }
+    
+
+.main-upper {
+    height: 100%;
+    background-image: url(./images/musikplayer.jpeg);
+    color:white;
+    display: flex;
+    justify-content: space-between; /* Добавьте это для распределения пространства */
+    height: 100hv;
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    height: 100vh;
+}
+.main-body{
+    padding-top: 10%;
+    padding-left: 4%;
+}
+.big-text{
+    font-family:'Kenia';
+    font-size: 150px;
+    display: inline-block;
+    margin-bottom: 20%;
+}
+.based-text{
+    font-family: 'Istok Web';
+    font-size: 20px;
+    font-weight: lighter;
+}
+.phone-image{
+    padding-right: 20%;
+    margin-left: auto;
+}
+@media (max-width: 860px) {
+    .phone-image img{
+        max-width: 150%; /* Уменьшаем ширину изображения до 80% от родителя */
+        height: auto; /* Сохраняем пропорции изображения */
+        display: block; /* Убираем лишние пробелы под изображением */
+        margin: 0 auto; /* Центрируем изображение, если нужно */
+        margin-top:20%
+    }
+}
+@media (max-width: 800px) {
+    .phone-image img{
+       display: none;
+    }
+}
+@media (max-width: 560px) {
+    .main-upper{
+        padding-top: 40%;
+    }
+
+}
+@media (max-width: 450px) { 
+        .big-text{
+            font-size: 100px;
+        }
+        .based-text{
+            font-size: 15px;
+        }
+     
+    }
+
+.music{
+    background-color: var(--color-red);
+    display: flex;
+    min-height: 100%;
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    height: 108vh;
+}
+.music-name{
+    font-family: 'Karla';
+    font-size: 30px;
+    color:white;
+    padding-top: 4%;
+    padding-left: 4%;
+
+}
+.music-buttons{
+    margin-top: 25%;
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
+    gap:10%;
+}
+.music-buttons button{
+    display: block;
+    width: 382px; /* Ширина кнопок */
+    height: 83px; /* Высота кнопок */
+    margin-bottom: 10px; /* Отступ между кнопками */
+    border: 1px solid black; /* Граница кнопок */
+    background: radial-gradient(98.43% 2084.95% at 1.57% 7.83%, #B13E18 0%, #F3501A 100%); /* Градиентный фон */
+    color: white; /* Цвет текста */
+    font-size: 16px; /* Размер текста */
+    padding: 10px; /* Внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Тень снизу */
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Плавный переход */
+    font-size: 40px;
+    font-family: 'Karla';
+    
+}
+.music-buttons button:active {
+    background-color: lightgray; /* Цвет фона при нажатии */
+    transform: translateY(2px); /* Эффект нажатия */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+}
+.arm-image-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.arm-image {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    align-items: center;
+    margin-top: 15%;
+    max-height: 90vh;
+}
+@media (max-width: 1600px) {
+    .music {
+        flex-direction: column; /* Перестраиваем в колонну */
+        align-items: center;
+    }
+    .music-name{
+        padding-top: 4%;
+        padding-left: 4%;
+    }
+
+    .music-buttons {
+        margin-top: 5%; /* Уменьшаем отступ сверху для кнопок */
+        gap:20%;
+    }
+
+    .music-buttons button {
+        width: 300px; /* Уменьшаем ширину кнопок */
+        height: 70px; /* Уменьшаем высоту кнопок */
+        font-size: 30px; /* Уменьшаем размер текста */
+    }
+
+    .arm-image {
+        max-width: 70%; /* Уменьшаем размер изображения */
+        margin-top: 20px; /* Отступ сверху для изображения */
+    }
+
+    .arm-image-container {
+        margin-top: -3%; /* Убираем отступ сверху для контейнера изображения */
+    }
+
+}
+@media (max-width: 1300px){
+    .arm-image {
+        max-width: 100%; /* Уменьшаем размер изображения */
+        margin-top: 20px; /* Отступ сверху для изображения */
+    }
+    .music-buttons {
+        margin-top: 15%; /* Уменьшаем отступ сверху для кнопок */
+        gap:20%;
+    }
+}
+@media (max-width: 700px){
+    .arm-image {
+        max-width: 100%; /* Уменьшаем размер изображения */
+        margin-top: 30px; /* Отступ сверху для изображения */
+    }
+    .music-buttons {
+        margin-top: 30%; /* Уменьшаем отступ сверху для кнопок */
+        gap:20%;
+    }
+}
+@media (max-width: 450px){
+    .arm-image {
+        max-width: 100%; /* Уменьшаем размер изображения */
+        margin-top: 30px; /* Отступ сверху для изображения */
+    }
+    .music-buttons {
+        margin-top: 50%; /* Уменьшаем отступ сверху для кнопок */
+        gap:20%;
+    }
+
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    height: 109vh;
+    color:white;
+    background-color: black;
+}
+
+.about-title-container {
+    text-align: left
+}
+
+.about-main-container {
+    margin: 0 auto; /* Центрирует контейнер с основным текстом */
+    margin-top:50vh;
+    font-family: 'Karla';
+    font-size:30px;
+}
+.about-title-container{
+    font-family: 'Karla';
+    font-size: 30px;
+    color:white;
+    padding-top: 4%;
+    padding-left: 4%;
+}
+@media (max-width:1024px){
+    .about-main-container{
+        font-size:25px
+    }
+    }
+    .about-title-container {
+        text-align: center; /* Центрирует текст */
+        margin-left: -4%;
+    }
+    @media (max-width:500px){
+        .about-main-container{
+            font-size:18px;
+            margin-left:5vw
+        }
+        .about-title-container {
+            text-align: center; /* Центрирует текст */
+            margin-left: -4%;
+        }
+}
+.store{
+    height: 100vh;
+    background-color: var(--color-red);
+}
+
+.store-title-container{
+    font-family: 'Karla';
+    font-size: 30px;
+    color:white;
+    padding-top: 4%;
+    padding-left: 4%;
+}
+.store-body{
+    display: flex;
+    justify-content: start;
+    margin-right: 10%;
+}
+.store-general{
+    margin-top: 8%;
+    margin-left: 4%;
+}
+.download-wind{
+    border-radius: 34px;
+    width: 260px;
+    height: 65px;
+    background-color: black;
+    color: white;
+    margin-bottom: 8%;
+
+}
+.download-mac{
+    border-radius: 34px;
+    width: 260px;
+    height: 65px;
+    background-color: white;
+    color: black;
+    margin-bottom: 13%;
+    
+}
+.new-vers{
+    font-family: 'Montserrat';
+    font-size: 21px;
+    color:white;
+    margin-top: 7%;
+    margin-left: 1%;
+}
+
+.store-info{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    line-height: 21.94px;
+    width:431px ;
+    height: 110px;
+    margin-left: 1%;
+    margin-top: 6%;
+    color:white;
+
+}
+.store-a{
+    color:black;
+    cursor: pointer;
+    transition-duration:0.2s
+}
+.store-a:hover{
+    color:grey;
+}
+.macbook-img{
+    padding-right: 20%;
+    margin-left: auto;
+}
+@media (max-width:1680){
+    .macbook-img{
+        display: none;
+    }
+    
+}
+@media (max-width:500){
+    .new-vers{
+        font-size: 15px;
+
+
+    }
+    
+    .store-info{
+        font-size: 1px;
+    }
+    
+    
+}
+footer {
+    background-color: #000000;
+    color:white;
+}
+.footer-main-list a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.footer-main{
+    display: flex;
+    margin-left: 35vw;
+    padding-top: 115px;
+    column-gap: 200px;
+    font-family: 'Montserrat';
+}
+.footer-cont {
+    flex: 1;
+    margin-right: 20px; /* Фиксированный отступ справа */
+}
+.footer-main-list{
+    flex-direction: column;
+    white-space: nowrap;
+}
+.footer-main-list h3{
+    font-size: 23px;
+}
+.footer-main-list li{
+    margin-bottom: 33px;
+    font-size: 16px;
+}
+.footer-down{
+    margin-left: 110px;
+    padding-bottom: 70px;
+}
+.footer-down a{
+    text-decoration: none;
+    color: white;
+}
+.footer-down a:hover{
+    text-decoration: underline;
+}
+#footer-logo {
+    font-family: 'Kenia';
+    font-size: 50px;
+}
+.footer-down-list{
+    padding-top: 20px;
+    display: flex;
+    column-gap: 12vw;
+    font-family: 'Montserrat';
+    white-space: nowrap;
+    margin-right: 0 auto;
+}
+@media (max-width:1780px){
+    .footer-main{
+        column-gap: 120px;
+    }
+    .footer-down-list{
+        column-gap: 9vw;
+
+    }
+
+}
+@media (max-width:1780px){
+    .footer-main{
+        column-gap: 80px;
+
+    }
+    .footer-down-list{
+        column-gap: 6vw;
+
+    }
+
+}
+@media (max-width:1390px){
+    .footer-main{
+
+        column-gap: 40px;
+
+    }
+    .footer-down-list{
+        column-gap: 2vw;
+
+    }
+
+}
+@media (max-width:1390px){
+    .footer-main{
+        margin-left: 15vw;
+        column-gap: 40px;
+
+    }
+    .footer-main-list li{
+        margin-bottom: 33px;
+        font-size: 13px;
+    }
+    .footer-down-list{
+        column-gap: 2vw;
+        flex-direction: column;
+
+    }
+    
+
+}
+@media (max-width:860px){
+    .footer-main{
+        margin-left: 5vw;
+        column-gap: 10px;
+        margin-right: 0;
+
+    }
+    .footer-main-list h3{
+        font-size: 15px;
+    }
+    .footer-main-list li{
+        margin-bottom: 33px;
+        font-size: 10px;
+    }
+
+    .footer-main-list li{
+        margin-bottom: 33px;
+    }
+    .footer-down{
+        margin-left: 5vw;
+    }
+    .footer-down-list{
+        gap: 1vw;
+        font-size: 10px;
+    }
+    
+
+}
+@media (max-width:525px){
+    .footer-main{
+        padding-top: 30px;
+        margin-left: 2vw;
+        column-gap: 1px;
+        margin-right: 0;
+
+    }
+    .footer-main-list h3{
+        font-size: 13px;
+        margin-bottom: 1vw;
+    }
+    .footer-main-list li{
+        margin-bottom: 1vw;
+        font-size: 8px;
+    }
+    .footer-down-list {
+        margin-top: -3vw;
+    }
+
+    .footer-down{
+        margin-top: 1vw;
+        margin-left: 1vw;
+        display: flex;
+        align-items: center;
+    }
+    #footer-logo{
+        font-size:30px;
+        margin-right: 1vw;
+    }
+    .footer-down-list{
+        gap: 1vw;
+        font-size: 10px;
+    }
+    .footer-down-list h3{
+        gap: 1vw;
+        font-size: 5px;
+    }
+    
+
+}
